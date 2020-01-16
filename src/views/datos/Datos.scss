@@ -1,0 +1,64 @@
+.datos{
+        margin-top: 90px;
+        width: 80%;
+        margin: 0 10%;
+    div{
+        margin-top: 10px;
+        width: calc(100% / 2);
+        float: left;
+
+    }
+    h1{
+        color: #3b83bd;
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .formulario{
+        width: 100%;
+    }
+    form{
+        width: 100%;
+        div{
+            width: calc(100% / 2);
+            float: left;
+            position: relative;
+            input{
+                width: 80%;
+                margin: 5% 10%;
+                border: none;
+                border-bottom: solid 1px #9c9c9c;
+                outline:none !important;
+            }
+            select{
+                width: 80%;
+                margin: 5% 10%;
+                border: none;
+                border-bottom: solid 1px #9c9c9c;
+                outline: none !important;
+            }
+            .input-feedback{
+                font-size: 10px;
+                position: absolute;
+                top: 19px;
+                left: red;
+                color: red;
+                left: 26px;
+            }
+            .is-invalid{
+                border-bottom: solid 1px red;
+            }
+            button{
+                background-color: #3b83bd;
+                width: 100px;
+                padding: 3% 5%;
+                font-size: 14px;
+                color: white;
+                font-weight: bold;
+                position: absolute;
+                bottom: -222px;
+                left: 90px;
+            } 
+        }
+    }
+    
+}

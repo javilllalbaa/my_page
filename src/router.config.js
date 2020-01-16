@@ -1,6 +1,8 @@
 import {pushStateLocationPlugin} from '@uirouter/react'
 import {visualizer} from 'ui-router-visualizer'
+import { connect } from 'react-redux'
 import Layout from './views/layout'
+import Datos from './views/datos/Datos'
 
 export const plugins = [
   pushStateLocationPlugin
@@ -9,8 +11,13 @@ export const plugins = [
 export const states = [
     {
       name : 'layout',
-      url: '/text',
-      component : Layout
+      url: '/index',
+      component : connect()(Layout)
+    },
+    {
+      name : 'layout.datos',
+      url  : '/datos',
+      component : Datos
     }
 ]
 

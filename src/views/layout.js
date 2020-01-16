@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import Header from '../components/header/Header'
+// import Header from '../components/header/Header'
+import Header from '../containers/Header'
+import { get_Menu } from './../actions'
 import { UIView } from '@uirouter/react';
 
 class Layout extends Component {
@@ -9,6 +11,11 @@ class Layout extends Component {
 		this.state = {
 			statusSidebarWindows: true
 		}
+	}
+
+	componentDidMount(){
+		const { dispatch } = this.props
+		dispatch(get_Menu())
 	}
 
 	render() {

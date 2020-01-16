@@ -5,6 +5,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: .1px;
+}
+
+.center-v{
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+p{
+  font-size: 16px
 }
 
 code {

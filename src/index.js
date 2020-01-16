@@ -4,13 +4,13 @@ import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import App from './App'
-//import reducer from './reducers'
-import './assets/index.css'
+import reducer from './reducers'
+import './assets/css/index.css'
 
 const middleware = [thunk]
 
 const store = createStore(
-    //reducer,
+    reducer,
     applyMiddleware(...middleware)
 )
 
