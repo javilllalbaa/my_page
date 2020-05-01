@@ -8,6 +8,9 @@
         }
         .logo{
            text-align: center;
+           color: brown;
+           position: relative;
+           top: 8px;
            img{
                 width: 90px;
                 margin-top: 10px;
@@ -16,8 +19,7 @@
                 color: brown;
                 font-weight: 600;
                 position: relative;
-                bottom: 14px;
-                left: 5px;
+                bottom: 5px;
            } 
         }
         .sub_menu{
@@ -29,7 +31,8 @@
             }
             div{
                 width: calc(100% / 3);
-                img{
+                cursor: pointer;
+                .img_icon{
                     width: 20px;
                     float: left;
                     position: relative;
@@ -76,9 +79,14 @@
         ul{
             list-style: none;
             li{
+                cursor: pointer;
                 display: inline;
                 margin-right: 10px;
                 font-weight: 100;
+            }
+            li:hover{
+                font-size: 18px;
+                color: brown;
             }
         }
     }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-//import { get_Menu } from './../../actions'
-import { getAxios } from './../../services'
+import { PeopleCircle, XDiamond, Briefcase, Download } from 'react-bootstrap-icons';
+import { menu, pdf } from './../../constants'
+import base64 from 'base64topdf'
 
 /*img*/
 import logo from './../../assets/img/logo.png'
@@ -18,50 +19,61 @@ class Header extends Component{
 		}
 	}
 
-	componentDidMount(){
-		getAxios('menu')
-		.then(response => {
-			this.setState({
-				lista : response.data 
-			})
-		})
+	printMenu(e){
+		if(e.value !== "Triqui"){
+			alert("En construccion...")
+		}
 	}
 
-	printMenu(e){
-		console.log("Menu seleccionado...", e)
+	Information(e){
+		if(e === 1){
+			var byteCharacters = atob(pdf);
+			var byteNumbers = new Array(byteCharacters.length);
+			for (var i = 0; i < byteCharacters.length; i++) {
+			byteNumbers[i] = byteCharacters.charCodeAt(i);
+			}
+			var byteArray = new Uint8Array(byteNumbers);
+			var file = new Blob([byteArray], { type: 'application/pdf;base64' });
+			var fileURL = URL.createObjectURL(file);
+			window.open(fileURL);
+		}else if(e === 2){
+			window.open("https://github.com/javilllalbaa");
+		}else if(e === 3){
+			window.open("https://www.linkedin.com/in/javier-alexander-villalba-52814959/");
+		}
 	}
 
 	render(){
-		var test = this.props.menu.data !== undefined ? this.props.menu.data[0].title : ''
+		this.state.lista = menu
 		return (
 			<div className="header">
 				<div className="header_sup">
 					<div className="col_header"><p></p></div>
 					<div className="col_header logo">
-						<img src={logo} alt="" />
-						<p>LOGOTEXT</p>
+						<XDiamond className="logo" size={60} />
+						<p>Games</p>
 					</div>
 					<div className="col_header sub_menu center-v">
-						<div onClick={() => this.test()}>
-							<img src={location} alt="" />
-							<p>Tiendas {test}</p>
+						<div onClick={() => this.Information(1)}>
+							<Download className="img_icon" size="45"/>
+							<p>Perfil</p>
 						</div>
-						<div className="list">
-							<img src={location} alt="" />
-							<p>Lista de deseos</p>
+						<div onClick={() => this.Information(2)}>
+							<Briefcase className="img_icon" size="45"/>
+							<p>Github</p>
 						</div>
-						<div>
-							<img src={location} alt="" />
-							<p>Mi bolsa</p>
+						<div onClick={() => this.Information(3)}>
+							<PeopleCircle className="img_icon" size="45"/>
+							<p>Linkedin</p>
 						</div>
 					</div>
 				</div>
 				<div>
 					<div className="firts_tit center-v">
-						<p>ENVÍO GRATIS X COMPRA</p>
+						<p>Hello welcome</p>
 					</div>
 					<div className="firts_tit center-v second_tit">
-						<p>SUPERIOR A $150.000</p>
+						<p>to the games</p>
 					</div>
 				</div>
 				<div className="list_header">
@@ -69,7 +81,7 @@ class Header extends Component{
 						{   
 							this.state.lista.map( (item, index) => 
 								<li key={index} onClick={() => this.printMenu(item)}>
-									{item.title}
+									{item.text}
 								</li>
 							)
 						}
