@@ -51,7 +51,7 @@ class Header extends Component{
 					<div className="col_header"><p></p></div>
 					<div className="col_header logo">
 						<XDiamond className="logo" size={60} />
-						<p>Games</p>
+						<p>Page</p>
 					</div>
 					<div className="col_header sub_menu center-v">
 						<div onClick={() => this.Information(1)}>
@@ -73,7 +73,7 @@ class Header extends Component{
 						<p>Hello welcome</p>
 					</div>
 					<div className="firts_tit center-v second_tit">
-						<p>to the games</p>
+						<p>to the page</p>
 					</div>
 				</div>
 				<div className="list_header">

@@ -1,0 +1,59 @@
+.login{
+    .get_login{
+        width: 30%;
+        margin: 10% 35%;
+        .tit{
+            font-size: 18px;
+            font-weight: bolder;
+            text-align: center;
+        }
+        .formulario{
+            width: 100%;
+            form{
+                width: 100%;
+                div{
+                    width: 100%;
+                    position: relative;
+                    input{
+                        width: 80%;
+                        margin: 5% 10%;
+                        border: none;
+                        border-bottom: solid 1px #9c9c9c;
+                        outline:none !important;
+                        font-size: 16px;
+                    }
+                    select{
+                        width: 80%;
+                        margin: 5% 10%;
+                        border: none;
+                        border-bottom: solid 1px #9c9c9c;
+                        outline: none !important;
+                    }
+                    .input-feedback{
+                        font-size: 10px;
+                        position: absolute;
+                        top: 41px;
+                        left: red;
+                        color: red;
+                        left: 38px;
+                    }
+                    .is-invalid{
+                        border-bottom: solid 1px red;
+                    } 
+                }
+            }
+            .btn_{
+                background-color: #3b83bd;
+                width: 80%;
+                padding: 3% 5%;
+                text-align: center;
+                font-size: 14px;
+                color: white;
+                font-weight: bold;
+                position: absolute;
+                left: 24px;
+                margin: 10px 4%;
+            }
+        }
+    }
+}

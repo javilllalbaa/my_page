@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore, applyMiddleware } from 'redux'
+import { ApolloProvider } from "react-apollo"
+import ApolloClient, { gql } from "apollo-boost"
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import App from './App'
@@ -14,9 +16,15 @@ const store = createStore(
     applyMiddleware(...middleware)
 )
 
+const client = new ApolloClient({
+    uri: "http://localhost:3001/graphiql"
+});
+
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <ApolloProvider client={client}>
+            <App />
+        </ApolloProvider>
     </Provider>,
     document.getElementById('root'));
 
