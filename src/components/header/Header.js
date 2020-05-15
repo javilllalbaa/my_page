@@ -20,9 +20,7 @@ class Header extends Component{
 	}
 
 	printMenu(e){
-		if(e.value !== "Triqui"){
-			alert("En construccion...")
-		}
+		alert("En construccion...")
 	}
 
 	Information(e){

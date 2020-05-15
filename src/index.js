@@ -17,7 +17,7 @@ const store = createStore(
 )
 
 const client = new ApolloClient({
-    uri: "http://localhost:3001/graphiql"
+    uri: "http://localhost:3200/"
 });
 
 ReactDOM.render(
